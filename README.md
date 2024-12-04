@@ -340,42 +340,50 @@ LFO Modulation: None
 _Challenges Identified_
 
 Mismatch Between Model Architecture and Task Requirements:
-
-Whisper-Small was designed for speech-to-text tasks, where the output space is a natural language. Synthesizer sound matching, however, requires highly structured, domain-specific outputs, which Whisper-Small may not inherently support.
-The model struggles to generalize from audio features to structured .txt representations, indicating a need for task-specific architecture modifications or fine-tuning strategies.
+* Whisper-Small was designed for speech-to-text tasks, where the output space is a natural language. Synthesizer sound matching, however, requires highly structured, domain-specific outputs, which Whisper-Small may not inherently support.
+* The model struggles to generalize from audio features to structured .txt representations, indicating a need for task-specific architecture modifications or fine-tuning strategies.
 
 Dataset Constraints:
 
-The limited dataset size is likely contributing to poor model performance. A larger dataset with numerous examples of .wav to .txt mappings is critical for improving generalization.
-Synthesizer settings often have a complex relationship with the audio output, making it challenging for the model to infer precise settings without extensive training data.
+* The limited dataset size is likely contributing to poor model performance. A larger dataset with numerous examples of .wav to .txt mappings is critical for improving generalization.
+* Synthesizer settings often have a complex relationship with the audio output, making it challenging for the model to infer precise settings without extensive training data.
 
 Evaluation Challenges:
 
-Current evaluation metrics may not effectively capture the accuracy of structured outputs, especially when slight deviations (e.g., an incorrect filter type) render the result invalid for practical use.
-A new task-specific evaluation metric could be developed to assess alignment between predictions and references more accurately.
-Potential Improvements
+* Current evaluation metrics may not effectively capture the accuracy of structured outputs, especially when slight deviations (e.g., an incorrect filter type) render the result invalid for practical use.
+* A new task-specific evaluation metric could be developed to assess alignment between predictions and references more accurately.
+
+_Potential Improvements_
+
 Custom Loss Function:
 
-Implement a loss function tailored to this task, such as one that penalizes deviations in structured fields (e.g., waveform type, ADSR envelope values) more heavily than general mismatches.
+* Implement a loss function tailored to this task, such as one that penalizes deviations in structured fields (e.g., waveform type, ADSR envelope values) more heavily than general mismatches.
+
 Domain-Specific Preprocessing:
 
-Augment the input features with task-specific embeddings or descriptors (e.g., pre-calculated audio features such as spectral centroid, harmonic content) to help the model better correlate audio characteristics with structured settings.
+* Augment the input features with task-specific embeddings or descriptors (e.g., pre-calculated audio features such as spectral centroid, harmonic content) to help the model better correlate audio characteristics with structured settings.
+
 Alternative Architectures:
 
-Explore architectures better suited for structured output generation, such as sequence-to-sequence models with constrained decoding mechanisms or multimodal models that explicitly link audio features with textual representations.
+* Explore architectures better suited for structured output generation, such as sequence-to-sequence models with constrained decoding mechanisms or multimodal models that explicitly link audio features with textual representations.
+
 Transfer Learning and Pretraining:
 
-Pretrain the model on a larger corpus of audio-to-structured-text mappings, such as MIDI files or pre-labeled synthesizer datasets, to give it a foundational understanding before fine-tuning on the specific .wav to .txt task.
-Lessons Learned
+* Pretrain the model on a larger corpus of audio-to-structured-text mappings, such as MIDI files or pre-labeled synthesizer datasets, to give it a foundational understanding before fine-tuning on the specific .wav to .txt task.
+
+_Lessons Learned_
+
 Model Adaptation for Niche Tasks:
 
-Fine-tuning large, general-purpose models for highly specific tasks can require significant modifications, including task-specific loss functions, evaluation metrics, and data preprocessing pipelines.
+*Fine-tuning large, general-purpose models for highly specific tasks can require significant modifications, including task-specific loss functions, evaluation metrics, and data preprocessing pipelines.
+
 The Importance of Data Quality and Size:
 
-For niche tasks, creating a high-quality, domain-specific dataset is just as important as model architecture. The lack of sufficient data can be a bottleneck for performance.
+* For niche tasks, creating a high-quality, domain-specific dataset is just as important as model architecture. The lack of sufficient data can be a bottleneck for performance.
+
 Iterative Experimentation is Key:
 
-Each fine-tuning attempt has provided valuable insights into how the model interprets audio inputs and structured outputs, underscoring the need for iterative testing and debugging to refine the approach.
+* Each fine-tuning attempt has provided valuable insights into how the model interprets audio inputs and structured outputs, underscoring the need for iterative testing and debugging to refine the approach.
 
 ## Future Scope
 
