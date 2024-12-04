@@ -1,2 +1,4 @@
 # WhisperSynth
-Repurposing Whisper for Music Synthesizer Matching
+Repurposing Whisper for Music Synthesizer Sound Matching
+
+# Objective: 
