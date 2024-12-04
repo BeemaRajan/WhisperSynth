@@ -20,9 +20,9 @@ This dataset contains `.wav` files representing synthesizer sounds and correspon
 - Settings were manually recorded and formatted into `.txt` files.  
 
 ### **Example Pair:**  
-**Audio File (`example.wav`):** Synthesizer sound.  
+**Audio File (`sound{i}.wav`):** Synthesizer sound.  
 
-**Text File (`example.txt`):**  
+**Text File (`sound{i}.txt`):**  
 
 Waveform: Sine  
 Voices: 1  
