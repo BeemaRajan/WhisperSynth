@@ -21,6 +21,7 @@ This dataset contains `.wav` files representing synthesizer sounds and correspon
 
 ### **Example Pair:**  
 **Audio File (`example.wav`):** Synthesizer sound.  
+
 **Text File (`example.txt`):**  
 
 Waveform: Sine
