@@ -305,7 +305,7 @@ Output .txt files lack the structured formatting necessary for practical use.
 | 9.5   | 0.1841 | 0.5276          | 1.725e-06          |
 | 9.75  | 0.1784 | 0.8071          | 9.75e-07           |
 | 10.0  | 0.1846 | 0.6955          | 2.25e-07           |
-| **Final** | **Train Runtime:** 326.3445s | **Train Loss:** 0.3936 | **Train Samples/Second:** 4.903 |
+| **Final** | **Train Loss:** 0.3936 | 
 
 
 
