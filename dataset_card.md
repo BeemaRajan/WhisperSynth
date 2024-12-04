@@ -20,7 +20,9 @@ This dataset contains `.wav` files representing synthesizer sounds and correspon
 - Settings were manually recorded and formatted into `.txt` files.  
 
 ### **Example Pair:**  
-**Audio File (`sound{i}.wav`):** Synthesizer sound.  
+**Audio File (`sound{i}.wav`):** 
+
+Synthesizer sound.  
 
 **Text File (`sound{i}.txt`):**  
 
