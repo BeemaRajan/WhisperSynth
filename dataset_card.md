@@ -24,20 +24,13 @@ This dataset contains `.wav` files representing synthesizer sounds and correspon
 
 **Text File (`example.txt`):**  
 
-Waveform: Sine
-
-Voices: 1
-
-Oscillator Detune: None
-
-Filter Type: Highpass
-
-Filter Cutoff: 3000Hz
-
-ADSR Envelope: Attack: 400ms, Decay: 900ms, Sustain: -12 dB, Release: 600ms
-
+Waveform: Sine  
+Voices: 1  
+Oscillator Detune: None  
+Filter Type: Highpass  
+Filter Cutoff: 3000Hz  
+ADSR Envelope:  Attack: 400ms,  Decay: 900ms,  Sustain: -12 dB,  Release: 600ms  
 LFO Modulation: None
-
 
 ---
 
