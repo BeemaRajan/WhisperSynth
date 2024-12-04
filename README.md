@@ -1,5 +1,5 @@
 # WhisperSynth
-Fine-Tuning Whisper-Small for Synthesizer Sound Matching
+_Fine-Tuning Whisper-Small for Synthesizer Sound Matching_
 
 ## Table of Contents: 
 
