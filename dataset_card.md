@@ -4,7 +4,7 @@
 WhisperSynth Training Dataset
 
 ### **Number of Examples:** 
-~200
+200
 
 ### **Data Modality:** 
 Audio (`.wav`) and Text (`.txt`)
@@ -16,7 +16,7 @@ Audio (`.wav`) and Text (`.txt`)
 This dataset contains `.wav` files representing synthesizer sounds and corresponding `.txt` files with synthesizer settings.  
 
 ### **Data Sources:**  
-- Audio was generated using **Serum** and **Ableton Live** synthesizers.  
+- Audio was generated using **Serum** (synthesizer) and **Ableton Live** (DAW).  
 - Settings were manually recorded and formatted into `.txt` files.  
 
 ### **Example Pair:**  
@@ -52,13 +52,14 @@ Training models for audio-to-structured-text tasks, particularly synthesizer sou
 
 ## **3. Dataset Construction**
 ### **Generation Process:**  
-1. **Audio Generation:**  
+
+1. **Text annotations**
+   - `.txt` files were generated, containing structured representations of synthesizer settings.
+   - Different combinations of oscillator waveform types, filters, and ADSR envelopes were used.
+
+2. **Audio Generation:**  
    - `.wav` files were synthesized using Serum and Ableton Live.  
-   - Different combinations of oscillator types, filters, ADSR envelopes, and modulation were used.  
-
-2. **Text Annotations:**  
-   - Corresponding `.txt` files were manually created, containing structured representations of synthesizer settings.  
-
+     
 3. **Preprocessing:**  
    - Data was structured to align with Whisper-Small’s input/output requirements.  
    - `.wav` files were converted into log-mel spectrograms for model ingestion.  
