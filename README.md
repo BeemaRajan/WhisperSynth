@@ -3,6 +3,15 @@ _Fine-Tuning Whisper-Small for Synthesizer Sound Matching_
 
 ## Table of Contents: 
 
+1. [Project Overview](#project-overview)
+2. [Approach](#approach)
+3. [Current Progress](#current-progress)
+4. [Critical Analysis](#critical-analysis)
+5. [Future Scope](#future-scope)
+6. [References & Other Resources](#references--other-resources)
+7. [Acknowledgements](#acknowledgements)
+
+
 ## Project Overview
 
 ### Problem Statement:
