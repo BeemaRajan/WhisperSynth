@@ -439,8 +439,11 @@ While Whisper relies on log-mel spectrograms for audio analysis, exploring alter
 
 ## References & Other Resources
 [Synthesizer Sound Matching Using Audio Spectrogram Transformers](https://arxiv.org/pdf/2407.16643)
+
 [Formal Algorithms for Transformers](https://arxiv.org/pdf/2207.09238)
+
 [Serum Product Manual]
+
 [Generating Musical Synthesizer Patches with Machine Learning](https://jakespracher.medium.com/generating-musical-synthesizer-patches-with-machine-learning-c52f66dfe751)
 
 ## Acknowledgements
