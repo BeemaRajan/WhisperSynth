@@ -176,6 +176,10 @@ _Data Preparation_
 A dataset of .wav files was created, representing various synthesizer sounds. Each sound corresponds to a unique set of synthesizer settings.
 * Output Data:
 Each .wav file is paired with a .txt file that contains structured information about the synthesizer settings (e.g., oscillator type, frequency, envelope settings). The .txt files were automatically generated using a Jupyter notebook (data_gen.ipynb). My original goal was to have the model output in a .fxp file format (used by Serum); however, due to challenges in reverse-engineering the .fxp format, this has not been feasible (yet).
+* Audio Analysis with Whisper:
+Whisper processes audio files by converting them into log-mel spectrograms, a feature representation that captures the frequency and energy distribution of audio signals over time. This transformation serves as the input for Whisper's encoder and allows the model to analyze audio data effectively.
+
+[Picture of log-mel spectrogram]
 
 Challenges:
 
@@ -337,7 +341,7 @@ LFO Modulation: None
 
 ## Critical Analysis
 
-_Challenges Identified_
+**_Challenges Identified:_**
 
 Mismatch Between Model Architecture and Task Requirements:
 * Whisper-Small was designed for speech-to-text tasks, where the output space is a natural language. Synthesizer sound matching, however, requires highly structured, domain-specific outputs, which Whisper-Small may not inherently support.
@@ -353,7 +357,7 @@ Evaluation Challenges:
 * Current evaluation metrics may not effectively capture the accuracy of structured outputs, especially when slight deviations (e.g., an incorrect filter type) render the result invalid for practical use.
 * A new task-specific evaluation metric could be developed to assess alignment between predictions and references more accurately.
 
-_Potential Improvements_
+**_Potential Improvements:_**
 
 Custom Loss Function:
 
@@ -387,6 +391,41 @@ Iterative Experimentation is Key:
 
 ## Future Scope
 
+In the long term, this project opens up several opportunities for further exploration and improvement. Below are the key areas I would like to focus on:
+
+Understanding and Automating .fxp File Generation
+
+* A deeper understanding of the .fxp file format used in Serum is critical. By reverse-engineering these files, I aim to automate the data generation process, enabling the creation of structured .fxp outputs directly from the model.
+* This would streamline the workflow and bring the project closer to practical use in music production.
+
+Exploration of Custom Tokens for Structured Outputs
+
+* I plan to invest more time in designing custom tokens or formatting strategies to better align the model's outputs with the required structured format.
+* This could involve defining specific tokenization rules or using post-processing steps to enhance the output consistency.
+
+Experimenting with Different Models
+
+* While Whisper-Small serves as a foundation, evaluating alternative models (e.g., T5, GPT-based models, or audio-specific architectures) may yield better results for this task.
+* Comparing performance across different architectures will help identify the best approach for generating structured synthesizer settings.
+
+Optimization of the Training Pipeline
+
+* Improving the training process through enhanced loss functions, task-specific evaluation metrics, or more robust preprocessing pipelines will be a focus for future iterations.
+
+Scaling the Dataset
+
+* Expanding the dataset to include a larger and more diverse set of .wav files with corresponding settings will significantly improve model performance and generalization.
+
+Interactive and Real-Time Applications
+
+* Exploring Alternative Audio Analysis Methods
+
+While Whisper relies on log-mel spectrograms for audio analysis, exploring alternative approaches such as wavelet transforms, learned audio embeddings, or raw waveform analysis may improve the model's ability to extract relevant features for this specific task.
+
 ## References & Other Resources
+[Synthesizer Sound Matching Using Audio Spectrogram Transformers](https://arxiv.org/pdf/2407.16643)
+[Formal Algorithms for Transformers](https://arxiv.org/pdf/2207.09238)
+[Serum Product Manual]
+[Generating Musical Synthesizer Patches with Machine Learning](https://jakespracher.medium.com/generating-musical-synthesizer-patches-with-machine-learning-c52f66dfe751)
 
 ## Acknowledgements
