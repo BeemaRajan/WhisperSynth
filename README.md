@@ -223,12 +223,6 @@ Serum:
 
 Sample .txt data:
 
-_Tools and Frameworks_
-* HuggingFace Transformers Library: For model handling and fine-tuning.
-* PyTorch: Backend framework for training and customization.
-* Ableton Live and Serum: Used to generate and organize synthesizer sounds.
-* Jupyter Notebooks: For data generation, analysis, and experimentation.
-
 ### Current Progress
 This section outlines the progress made so far in the project, detailing the completed steps, challenges encountered, and insights gained.
 
@@ -447,3 +441,8 @@ While Whisper relies on log-mel spectrograms for audio analysis, exploring alter
 [Generating Musical Synthesizer Patches with Machine Learning](https://jakespracher.medium.com/generating-musical-synthesizer-patches-with-machine-learning-c52f66dfe751)
 
 ## Acknowledgements
+_Tools and Frameworks_
+* HuggingFace Transformers Library: For model handling and fine-tuning.
+* PyTorch: Backend framework for training and customization.
+* Ableton Live & Serum: Used to generate and organize synthesizer sounds.
+* Jupyter Notebooks: For data generation, analysis, and experimentation.
