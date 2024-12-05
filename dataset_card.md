@@ -83,7 +83,8 @@ Training models for audio-to-structured-text tasks, particularly synthesizer sou
 ---
 
 ## **7. Future Improvements**
-- Expand the dataset to include more `.wav` files and corresponding `.txt` settings.  
+- Expand the dataset to include more `.wav` files and corresponding `.txt` settings.
+- Increase number of settings on `.txt` files
 - Incorporate `.fxp` files into the dataset for direct preset generation.  
 
 ---
