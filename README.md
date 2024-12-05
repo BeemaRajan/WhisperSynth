@@ -270,6 +270,8 @@ Output .txt files lack the structured formatting necessary for practical use.
 
 **_Training Performance:_**
 
+Results from finetune_whisper.py
+
 | Epoch | Loss   | Grad Norm       | Learning Rate      |
 |-------|--------|-----------------|--------------------|
 | 0.25  | 10.2973 | 11.1445         | 2.9325e-05         |
