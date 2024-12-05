@@ -433,6 +433,8 @@ While Whisper relies on log-mel spectrograms for audio analysis, exploring alter
 
 [Generating Musical Synthesizer Patches with Machine Learning](https://jakespracher.medium.com/generating-musical-synthesizer-patches-with-machine-learning-c52f66dfe751)
 
+[Understanding Log-Mel Spectrogram](https://medium.com/analytics-vidhya/understanding-the-mel-spectrogram-fca2afa2ce53)
+
 [Serum Website](https://xferrecords.com/products/serum/)
 
 ## Acknowledgements
