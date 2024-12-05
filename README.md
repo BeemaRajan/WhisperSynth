@@ -195,7 +195,7 @@ Each .wav file is paired with a .txt file that contains structured information a
 Whisper processes audio files by converting them into log-mel spectrograms, a feature representation that captures the frequency and energy distribution of audio signals over time. This transformation serves as the input for Whisper's encoder and allows the model to analyze audio data effectively.
 
 Log-Mel Spectrogram:
-![Picture of Log-Mel Spectrogram](images/spectrogram_image)
+![Picture of Log-Mel Spectrogram](images/spectrogram_image.png)
 
 Challenges:
 
@@ -219,13 +219,16 @@ Debugging and optimization are ongoing to improve model performance and output q
 Below are pictures of Ableton's interface, Serum's interface, and an example of the structured .txt data used for fine-tuning:
 
 Ableton:
-![Abelton](images/ableton_image)
+
+![Abelton](images/ableton_image.png)
 
 Serum:
-![Serum](images/serum_image)
+
+![Serum](images/serum_image.png)
 
 Sample .txt data:
-![.txt data](images/sound100_image)
+
+![.txt data](images/sound100_image.png)
 
 ### Current Progress
 This section outlines the progress made so far in the project, detailing the completed steps, challenges encountered, and insights gained.
