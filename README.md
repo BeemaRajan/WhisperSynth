@@ -195,6 +195,7 @@ Each .wav file is paired with a .txt file that contains structured information a
 Whisper processes audio files by converting them into log-mel spectrograms, a feature representation that captures the frequency and energy distribution of audio signals over time. This transformation serves as the input for Whisper's encoder and allows the model to analyze audio data effectively.
 
 Log-Mel Spectrogram:
+
 ![Picture of Log-Mel Spectrogram](images/spectrogram_image.png)
 
 Challenges:
