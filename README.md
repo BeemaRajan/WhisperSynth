@@ -427,6 +427,8 @@ Interactive and Real-Time Applications
 While Whisper relies on log-mel spectrograms for audio analysis, exploring alternative approaches such as wavelet transforms, learned audio embeddings, or raw waveform analysis may improve the model's ability to extract relevant features for this specific task.
 
 ## References & Other Resources
+[Whisper-Small (HuggingFace)](https://huggingface.co/openai/whisper-small)
+
 [Synthesizer Sound Matching Using Audio Spectrogram Transformers](https://arxiv.org/pdf/2407.16643)
 
 [Formal Algorithms for Transformers](https://arxiv.org/pdf/2207.09238)
