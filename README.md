@@ -1,6 +1,8 @@
 # WhisperSynth
 _Fine-Tuning Whisper-Small for Synthesizer Sound Matching: Is it possible?_
 
+My final fine tuned model is included in the "releases" section, which can be accessed via tags.
+
 ## Table of Contents: 
 
 1. [Project Overview](#project-overview)
@@ -16,7 +18,6 @@ _Fine-Tuning Whisper-Small for Synthesizer Sound Matching: Is it possible?_
 6. [References & Other Resources](#references--other-resources)
 
 7. [Acknowledgements](#acknowledgements)
-
 
 ## Project Overview
 
