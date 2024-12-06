@@ -380,7 +380,7 @@ Transfer Learning and Pretraining:
 
 * Pretrain the model on a larger corpus of audio-to-structured-text mappings, such as MIDI files or pre-labeled synthesizer datasets, to give it a foundational understanding before fine-tuning on the specific .wav to .txt task.
 
-_Lessons Learned_
+**_Lessons Learned_**
 
 Model Adaptation for Niche Tasks:
 
