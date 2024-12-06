@@ -7,7 +7,7 @@ _Fine-Tuning Whisper-Small for Synthesizer Sound Matching: Is it possible?_
 
 2. [Approach](#approach)
 
-3. [Current Progress](#current-progress)
+3. [Progress](#progress)
 
 4. [Critical Analysis](#critical-analysis)
 
@@ -233,7 +233,7 @@ Further evaluation incorporates metrics for accuracy in matching the intended so
 Fine-tuning has presented challenges encountered in aligning the output format to the desired .txt structure with speculation that Whisper-small might not be suitable for this task.
 While defining domain-specific tokens yielded greater training loss, it has not been significant enough for the model to accurately output the structured data.
 
-### Progress
+## Progress
 This section outlines the progress made in the project, detailing the completed steps, challenges encountered, and insights gained.
 
 _Steps Completed_
@@ -262,11 +262,10 @@ _Preliminary Evaluation:_
 _Challenges Faced_
 * Dataset Size and Quality:
 Limited data availability for such a niche task.
+
 * Serum file formats are proprietary and difficult to replicate.
 
-* Model Adaptation:
-
-Whisper-Small was not initially designed for this domain, requiring adjustments to outputs.
+* Model Adaptation: Whisper-Small was not initially designed for this domain, requiring adjustments to outputs.
 Output .txt files lack the structured formatting necessary for practical use.
 
 **_Training Performance:_**
@@ -417,6 +416,7 @@ Experimenting with Different Models
 Establishing new ways to Analyze Audio
 
 * While Whisper relies on log-mel spectrograms for audio analysis, exploring alternative approaches such as wavelet transforms, learned audio embeddings, or raw waveform analysis may improve the model's ability to extract relevant features for this specific task.
+* This could be a pivotal step in addressing the limitations of log-mel spectrograms by providing new and potentially more informative ways to analyze audio.
 
 ## References & Other Resources
 [Whisper-Small (HuggingFace)](https://huggingface.co/openai/whisper-small)
