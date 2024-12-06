@@ -1,5 +1,5 @@
 # WhisperSynth
-_Fine-Tuning Whisper-Small for Synthesizer Sound Matching_
+_Fine-Tuning Whisper-Small for Synthesizer Sound Matching: Is it possible?_
 
 ## Table of Contents: 
 
@@ -25,7 +25,7 @@ Synthesizer sound matching is a challenging task in music production that involv
 
 This project aims to automate the task by fine-tuning a pre-trained Whisper-Small model from HuggingFace to process audio input (e.g., a synthesizer sound in .wav format) and generate corresponding synthesizer settings in a structured .txt format. The ultimate goal is to make sound matching more accessible and efficient for producers, sound designers, and musicians.
 
-While the model is not fully functional yet, this repository documents the progress made so far, the challenges encountered, and a roadmap for future work. By tackling this problem, the project seeks to demonstrate the versatility of Transformers in niche applications beyond traditional natural language processing tasks.
+While the model is not functional, this repository documents the progress made, the challenges encountered, and a roadmap for future work. By tackling this problem, the project seeks to demonstrate the versatility of Transformers in niche applications beyond traditional natural language processing tasks.
 
 ### Synthesizers and Their Role in Music:
 
@@ -47,7 +47,7 @@ Whether creating lush, ambient textures or aggressive, cutting-edge soundscapes,
 
 Sound design is a critical aspect of music production, where producers and sound designers use synthesizers to craft unique audio textures and tones. Despite advancements in technology, the process of replicating or matching a synthesizer sound remains highly manual and requires significant expertise. Producers often rely on trial and error to recreate a sound they hear, adjusting parameters such as oscillators, filters, and envelopes until the desired tone is achieved. This process can be time-consuming and is not always precise.
 
-With the increasing complexity of modern synthesizers and the demand for custom sound creation, automating sound matching has the potential to save valuable time and lower the barrier to entry for less experienced musicians. This project explores how Transformer-based models, specifically Whisper-Small, can be fine-tuned to bridge this gap by converting audio input into detailed synthesizer settings.
+With the increasing complexity of modern synthesizers and the demand for custom sound creation, automating sound matching has the potential to save valuable time and lower the barrier to entry for less experienced musicians. This project explores how Transformer-based models, specifically Whisper-Small, might be fine-tuned to bridge this gap by converting audio input into detailed synthesizer settings.
 
 ### Project Impact
 By automating the process of synthesizer sound matching, this project could provide the following benefits:
@@ -68,13 +68,16 @@ This project represents a step toward integrating AI and music production tools,
 
 ## Approach
 
-This project leverages the pre-trained Whisper-Small model from HuggingFace and fine-tunes it for the task of synthesizer sound matching. The goal is to take a .wav file as input and output a structured .txt file containing the corresponding synthesizer settings. Below is an outline of the approach taken:
+This project attempts to leverage the pre-trained Whisper-Small model from HuggingFace and fine-tune it for the task of synthesizer sound matching. The goal is to take a .wav file as input and output a structured .txt file containing the corresponding synthesizer settings. Below is an outline of the approach taken:
 
 ### Model Selection
 _Why Whisper-Small?_
-The Whisper-Small model, originally designed for speech-to-text tasks, has demonstrated exceptional performance in understanding audio input and generating meaningful text outputs. Its ability to process complex audio data makes it a suitable candidate for adapting to a niche domain like sound matching.
+The Whisper-Small model, originally designed for speech-to-text tasks, has demonstrated exceptional performance in understanding audio input and generating meaningful text outputs. Its ability to process complex audio data makes it a suitable candidate for adapting to a niche domain like synthesizer sound matching, which is a complex classification task.
 
 _Whisper-Small Architechure:_
+
+In examining the Architechture, we can see that the model itself isn't complex or unlike previous Encoder-Decoder models.
+
 ```python
 WhisperForConditionalGeneration(
   (model): WhisperModel(
@@ -204,19 +207,6 @@ Challenges:
 * Need for consistent formatting of .txt files for effective training.
 * Lack of automated data generation.
 
-_Fine-Tuning the Model_
-* Dataset Formatting:
-The dataset was preprocessed to align with Whisper-Small's input requirements, ensuring audio and text pairings were appropriately structured.
-* Training Setup:
-Leveraged HuggingFace's Transformers library for fine-tuning.
-Used a hybrid approach to gradually introduce additional training data.
-* Evaluation Metrics:
-Initial evaluation focuses on the syntactic correctness of the output .txt files.
-Future evaluation will incorporate metrics for accuracy in matching the intended sound.
-* Current Status
-Fine-tuning is in progress, with challenges encountered in aligning the output format to the desired .txt structure.
-Debugging and optimization are ongoing to improve model performance and output quality.
-
 Below are pictures of Ableton's interface, Serum's interface, and an example of the structured .txt data used for fine-tuning:
 
 Ableton:
@@ -231,23 +221,35 @@ Sample .txt data:
 
 ![.txt data](images/sound100_image.png)
 
-### Current Progress
-This section outlines the progress made so far in the project, detailing the completed steps, challenges encountered, and insights gained.
+_Fine-Tuning the Model_
+* Dataset Formatting:
+The dataset was preprocessed to align with Whisper-Small's input requirements, ensuring audio and text pairings were appropriately structured.
+* Training Setup:
+Leveraged HuggingFace's Transformers library and utilized LoRA for fine-tuning.
+* Evaluation Metrics:
+Initial evaluation focuses on the syntactic correctness of the output .txt files.
+Further evaluation incorporates metrics for accuracy in matching the intended sound.
+* Status
+Fine-tuning has presented challenges encountered in aligning the output format to the desired .txt structure with speculation that Whisper-small might not be suitable for this task.
+While defining domain-specific tokens yielded greater training loss, it has not been significant enough for the model to accurately output the structured data.
+
+### Progress
+This section outlines the progress made in the project, detailing the completed steps, challenges encountered, and insights gained.
 
 _Steps Completed_
 
 Dataset Creation:
 
-Generated a small dataset (~200) .wav files representing synthesizer sounds, paired with .txt files containing the corresponding synthesizer settings.
+Generated a small dataset (200) .wav files representing synthesizer sounds, paired with .txt files containing the corresponding synthesizer settings.
 Organized the dataset into a structured format for incremental training and testing.
 
 _Model Preparation:_
 
 * Selected the Whisper-Small model from HuggingFace as the base model.
 * Set up the training environment using HuggingFace Transformers, PyTorch, and Colab.
-* Adapted the model to process audio inputs and generate text outputs in the desired .txt format.
+* Adapted the model to process audio inputs, added specialized tokens for the task, and generate text outputs in the desired .txt format.
 
-_Initial Fine-Tuning Attempts:_
+_Fine-Tuning Attempts:_
 
 * Began fine-tuning the model using the prepared dataset using LoRA.
 * Addressed initial preprocessing challenges to align audio-text pairs with the model's input requirements.
@@ -255,13 +257,11 @@ _Initial Fine-Tuning Attempts:_
 _Preliminary Evaluation:_
 
 * Ran the model on test .wav files to observe output structure and identify formatting issues.
-* Loss demonstrates successful learning for the model, yet outputs prove challenges with structure.
+* Loss demonstrates unsuccessful learning for the model as outputs prove challenges with structure.
 
 _Challenges Faced_
 * Dataset Size and Quality:
 Limited data availability for such a niche task.
-* Synthesizer settings need more diverse and representative samples to improve model generalization.
-
 * Serum file formats are proprietary and difficult to replicate.
 
 * Model Adaptation:
@@ -316,6 +316,8 @@ Results from finetune_whisper.py
 | 9.75  | 5.7924  | 8.3206          | 1.05e-06           |
 | 10.0  | 5.7762  | 8.3964          | 3.0e-07            |
 | **Final** | **Train Loss:** 6.4708 |
+
+While changing the learning rate (from 5e-5 to 3e-5) and number of epochs (from 3 to 10) yielded slightly more training loss, the fluctuation in the training loss indicates that the model may not be learning the structured data correctly.
 
 Results from Evaluation script (eval.py):
 
@@ -402,7 +404,7 @@ Understanding and Automating .fxp File Generation
 * A deeper understanding of the .fxp file format used in Serum is critical. By reverse-engineering these files, I aim to automate the data generation process, enabling the creation of structured .fxp outputs directly from the model.
 * This would streamline the workflow and bring the project closer to practical use in music production.
 
-Exploration of Custom Tokens for Structured Outputs
+Exploration of Custom Tokens for Structured Outputs in Encoder-Decoder Models
 
 * I plan to invest more time in designing custom tokens or formatting strategies to better align the model's outputs with the required structured format.
 * This could involve defining specific tokenization rules or using post-processing steps to enhance the output consistency.
@@ -412,19 +414,9 @@ Experimenting with Different Models
 * While Whisper-Small serves as a foundation, evaluating alternative models (e.g., T5, GPT-based models, or audio-specific architectures) may yield better results for this task.
 * Comparing performance across different architectures will help identify the best approach for generating structured synthesizer settings.
 
-Optimization of the Training Pipeline
+Establishing new ways to Analyze Audio
 
-* Improving the training process through enhanced loss functions, task-specific evaluation metrics, or more robust preprocessing pipelines will be a focus for future iterations.
-
-Scaling the Dataset
-
-* Expanding the dataset to include a larger and more diverse set of .wav files with corresponding settings will significantly improve model performance and generalization.
-
-Interactive and Real-Time Applications
-
-* Exploring Alternative Audio Analysis Methods
-
-While Whisper relies on log-mel spectrograms for audio analysis, exploring alternative approaches such as wavelet transforms, learned audio embeddings, or raw waveform analysis may improve the model's ability to extract relevant features for this specific task.
+* While Whisper relies on log-mel spectrograms for audio analysis, exploring alternative approaches such as wavelet transforms, learned audio embeddings, or raw waveform analysis may improve the model's ability to extract relevant features for this specific task.
 
 ## References & Other Resources
 [Whisper-Small (HuggingFace)](https://huggingface.co/openai/whisper-small)
