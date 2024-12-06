@@ -344,6 +344,29 @@ LFO Modulation: None
 {'eval_loss': 7.573992729187012, 'eval_model_preparation_time': 0.006, 'eval_exact_match_accuracy': 0.0, 'eval_Waveform': 0.0, 'eval_Voices': 0.0, 'eval_Oscillator Detune': 0.0, 'eval_Filter Type': 0.0, 'eval_Filter Cutoff': 0.0, 'eval_ADSR Envelope': 0.0, 'eval_LFO Modulation': 0.0, 'eval_runtime': 70.4598, 'eval_samples_per_second': 0.568, 'eval_steps_per_second': 0.142}
 ```
 
+Clearly, the output is not what we would want to expect. However, this output is different than the model's output prior to adding task-specific tokens:
+
+```python
+---
+Prediction:  you
+Reference: Waveform: Square
+Voices: 1
+Oscillator Detune: None
+Filter Type: Lowpass
+Filter Cutoff: 10000Hz
+ADSR Envelope: Attack: 500ms, Decay: 1.00s, Sustain: -6 dB, Release: 300ms
+LFO Modulation: None
+---
+```
+
+A potential positive outcome is that the model may be identifying the repetition of the same sound throughout the entire audio clip. For example, the output:
+
+```python
+ḍᵗᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦᶦ
+```
+
+could indicate that a transient (beginning of sound) was detected followed by the remainder of the synthesizer sound. This may be an optimistic take, but regardless, the outputs lack any similarity to the .txt files, indicating that this model is likely unsuitable for the task.
+
 ## Critical Analysis
 
 **_Challenges Identified:_**
