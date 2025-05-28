@@ -1,7 +1,7 @@
 # WhisperSynth
 **_Fine-Tuning Whisper-Small for Synthesizer Sound Matching: Is it possible?_**
 
-My final fine tuned model is included in the "releases" section, which can be accessed via tags.
+My final fine-tuned model is included in the "releases" section, which can be accessed via tags.
 
 ## Table of Contents: 
 
@@ -408,7 +408,7 @@ Transfer Learning and Pretraining:
 
 Model Adaptation for Niche Tasks:
 
-*Fine-tuning large, general-purpose models for highly specific tasks can require significant modifications, including task-specific loss functions, evaluation metrics, and data preprocessing pipelines.
+* Fine-tuning large, general-purpose models for highly specific tasks can require significant modifications, including task-specific loss functions, evaluation metrics, and data preprocessing pipelines.
 
 The Importance of Data Quality and Size:
 
